@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update book</title>
+    <style>/* Основной стиль для body */
+    /* Основной стиль для body */
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Общий контейнер */
+    .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Стили для ссылок книг */
+    .container a {
+        display: block;
+        color: #6a1b9a;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 8px;
+        background-color: #f3e5f5;
+        transition: all 0.3s;
+    }
+
+    .container a:hover {
+        background-color: #e1bee7;
+        color: #4a0072;
+    }
+
+    /* Горизонтальная линия */
+    hr {
+        border: none;
+        border-top: 2px solid #ce93d8;
+        margin: 20px 0;
+    }
+
+    /* Кнопки формы */
+    form input[type="submit"] {
+        background: linear-gradient(90deg, #ab47bc, #7b1fa2);
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background 0.3s;
+        margin-top: 10px;
+    }
+
+    form input[type="submit"]:hover {
+        background: linear-gradient(90deg, #8e24aa, #6a1b9a);
+    }
+
+    </style>
+
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">
+    <label for="name"> Enter name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">title error</div>
+    <br/>
+    <label for="author"> Enter author: </label>
+    <input type="text" th:field="*{author}" id="author"/>
+    <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">author error</div>
+    <br/>
+    <label for="year">Enter year: </label>
+    <input type="text" th:field="*{year}" id="year"/>
+    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">year error</div>
+    <br/>
+
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

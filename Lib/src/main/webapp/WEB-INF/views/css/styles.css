@@ -1,0 +1,110 @@
+/* Основной стиль для body */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Общий контейнер */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Стиль для ссылок */
+a {
+    display: block;
+    color: #6a1b9a;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ab47bc;
+}
+
+/* Общий стиль для форм */
+form {
+    margin: 10px 0;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #6a1b9a;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #ce93d8;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus {
+    border-color: #8e24aa;
+}
+
+/* Кнопки отправки */
+form input[type="submit"] {
+    background: linear-gradient(90deg, #ab47bc, #7b1fa2);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+form input[type="submit"]:hover {
+    background: linear-gradient(90deg, #8e24aa, #6a1b9a);
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+/* Стиль для сообщений */
+p {
+    color: #333;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+p.error {
+    color: #d32f2f;
+}
+
+p.success {
+    color: #388e3c;
+}
+
+/* Разделители */
+hr {
+    border: none;
+    border-top: 2px solid #ce93d8;
+    margin: 20px 0;
+}
